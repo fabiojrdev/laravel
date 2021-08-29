@@ -17,7 +17,7 @@ class ContactController extends Controller
         return view('site.contact.index');
     }
 
-    public function contact(Request $request){
-        ddd($request->all());
-    }
+    // public function contact(Request $request){
+    //     ddd($request->all());
+    // }
 }

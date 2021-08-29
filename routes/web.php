@@ -15,15 +15,17 @@
 Route::namespace('\App\Http\Controllers\Site')->group(function(){ 
     
     
-Route::get('/', HomeController::class)->name('site.home.index'); 
+    Route::get('/', 'HomeController')->name('site.home');
 
-Route::get('/products', 'CategoryProductsController@index')->name('site.category.index');
-Route::get('/products/{slug}', 'CategoryProductsController@show');
+    Route::get('produtos', 'CategoryProductsController@index')->name('site.category');
+    Route::get('/produtos/{slug}', 'CategoryProductsController@show');
 
-Route::get('/blog', BlogController::class)->name('site.blog.index');
-Route::view('/about', 'site.about.index');
+    Route::get('blog', 'BlogController')->name('site.blog');
 
-Route::get('/contact', 'ContactController@index')->name('site.contact.index');
-Route::post('/contact', 'ContactController@form');
+    Route::view('sobre', 'site.about.index')->name('site.about');
+
+    Route::get('contato', 'ContactController@index')->name('site.contact');
+    // Route::post('contato', 'ContactController@form')->name('site.contact.form');
+
 
 });
